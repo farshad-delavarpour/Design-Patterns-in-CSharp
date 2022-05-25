@@ -25,7 +25,7 @@ namespace DesignPatterns.Iterator
             return new ListIterator(this);
         }
 
-        public class ListIterator : IIterator
+        private class ListIterator : IIterator
         {
             private readonly BrowseHistory _history;
             private int _index;
