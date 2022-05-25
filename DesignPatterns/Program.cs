@@ -21,3 +21,16 @@
 
 #endregion
 
+#region Strategy
+
+using DesignPatterns.Strategy;
+
+var imageStorage = new ImageStorage();
+
+imageStorage.Store("testFileName", new PngCompressor(), new BlackAndWhiteFilter());
+imageStorage.Store("testFileName", new JpegCompressor(), new BlackAndWhiteFilter());
+
+#endregion
+
+
+Console.ReadKey();
