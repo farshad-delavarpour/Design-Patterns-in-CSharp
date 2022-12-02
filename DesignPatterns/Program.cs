@@ -2,6 +2,7 @@
 using DesignPatterns.BrushTool;
 using DesignPatterns.Iterator;
 using DesignPatterns.State;
+using DesignPatterns.Strategy;
 
 #region Memento Pattern
 
@@ -43,21 +44,30 @@ using DesignPatterns.State;
 
 #region Iterator Pattern
 
-var productCollection = new ProductCollection();
-productCollection.Add(new Product(1, "Milk"));
-productCollection.Add(new Product(2, "Bread"));
-productCollection.Add(new Product(3, "Meat"));
+// var productCollection = new ProductCollection();
+// productCollection.Add(new Product(1, "Milk"));
+// productCollection.Add(new Product(2, "Bread"));
+// productCollection.Add(new Product(3, "Meat"));
 
-var iterator = productCollection.CreateIterator();
+// var iterator = productCollection.CreateIterator();
 
-while (iterator.HasNext())
-{
-    System.Console.WriteLine(iterator.Current());
-    iterator.Next();
-}
+// while (iterator.HasNext())
+// {
+//     System.Console.WriteLine(iterator.Current());
+//     iterator.Next();
+// }
 
 #endregion
 
+#region Strategy Pattern
+
+var chatClient = new ChatClient(new AESEncryption());
+var chatClient2 = new ChatClient(new DESEncryption());
+
+chatClient.Send("Some Text");
+chatClient2.Send("Some Text");
+
+#endregion
 
 
 Console.ReadKey();
