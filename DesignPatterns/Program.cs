@@ -1,34 +1,28 @@
-﻿#region Iterator
+﻿using System;
 
-//using DesignPatterns.Iterator;
+# region Memento
 
-//var history = new BrowseHistory();
+using DesignPatterns.Memento;
 
-//history.Push("a");
-//history.Push("b");
-//history.Push("c");
+var document = new Document();
+var history = new DocumentHistory();
 
-//var iterator = history.CreateIterator();
+document.Content = "Test Content 1";
+document.FontName = "Arial";
+document.FontSize = 14;
 
-//while (iterator.HasNext())
-//{
-//    var url = iterator.Current();
-//    Console.WriteLine(url);
-//    iterator.Next();
-//}
+history.Push(document.CreateState());
 
-//Console.ReadKey();
+Console.WriteLine(document);
 
-#endregion
+document.Content = "Test Content 2";
+document.FontSize = 16;
 
-#region Strategy
+Console.WriteLine(document);
 
-using DesignPatterns.Strategy;
+document.Restore(history.Pop());
 
-var imageStorage = new ImageStorage();
-
-imageStorage.Store("testFileName", new PngCompressor(), new BlackAndWhiteFilter());
-imageStorage.Store("testFileName", new JpegCompressor(), new BlackAndWhiteFilter());
+Console.WriteLine(document);
 
 #endregion
 
