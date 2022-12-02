@@ -1,24 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace DesignPatterns.State
 {
     public class Canvas
     {
-        public ITool? CurrentTool { get; set; }
+        private readonly ITool _tool;
 
-        public void MouseDown()
+        public Canvas(ITool tool)
         {
-            CurrentTool?.MouseDown();
+            _tool = tool;
         }
 
-        public void MouseUp()
-        {
-            CurrentTool?.MouseUp();
-        }
+        public string MouseUp() =>
+             _tool.MouseUp();
 
+        public string MouseDown() =>
+             _tool.MouseUp();
     }
 }

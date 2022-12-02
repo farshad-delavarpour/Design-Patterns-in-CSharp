@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DesignPatterns.State;
 
-namespace DesignPatterns.State
+namespace DesignPatterns.BrushTool
 {
     public class BrushTool : ITool
     {
-        public void MouseDown()
-        {
-            Console.WriteLine("Brush icon");
-        }
+        public string MouseDown() => "Brush Mouse Down";
+        public string MouseUp() => "Brush Mouse Up";
+    }
 
-        public void MouseUp()
-        {
-            Console.WriteLine("Draw a line");
-        }
+    public class EraserTool : ITool
+    {
+        public string MouseDown() => "Eraser Mouse Down";
+        public string MouseUp() => "Eraser Mouse Up";
     }
 }
