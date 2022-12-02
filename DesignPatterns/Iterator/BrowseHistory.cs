@@ -9,23 +9,24 @@ namespace DesignPatterns.Iterator
     public class BrowseHistory
     {
         private List<string> Urls { get; } = new List<string>();
-        
+
         public void Push(string url) =>
             Urls.Add(url);
 
         public string Pop()
         {
-            var lastUrl = Urls.Last();
-            Urls.Remove(lastUrl);
+            var lastUrl = Urls.LastOrDefault();
+            if (lastUrl != null)
+                Urls.Remove(lastUrl);
             return lastUrl;
         }
 
-        public IIterator CreateIterator()
+        public IIterator<string> CreateIterator()
         {
             return new ListIterator(this);
         }
 
-        private class ListIterator : IIterator
+        private class ListIterator : IIterator<string>
         {
             private readonly BrowseHistory _history;
             private int _index;
@@ -49,5 +50,5 @@ namespace DesignPatterns.Iterator
         }
     }
 
-    
+
 }

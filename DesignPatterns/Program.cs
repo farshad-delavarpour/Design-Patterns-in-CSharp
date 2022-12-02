@@ -1,5 +1,6 @@
 ﻿using System;
 using DesignPatterns.BrushTool;
+using DesignPatterns.Iterator;
 using DesignPatterns.State;
 
 #region Memento Pattern
@@ -30,16 +31,32 @@ using DesignPatterns.State;
 
 #region State Pattern
 
-var eraser = new Canvas(new EraserTool());
-var brush = new Canvas(new BrushTool());
+// var eraser = new Canvas(new EraserTool());
+// var brush = new Canvas(new BrushTool());
 
-Console.WriteLine(eraser.MouseUp());
-Console.WriteLine(eraser.MouseDown());
-Console.WriteLine(brush.MouseUp());
-Console.WriteLine(brush.MouseDown());
+// Console.WriteLine(eraser.MouseUp());
+// Console.WriteLine(eraser.MouseDown());
+// Console.WriteLine(brush.MouseUp());
+// Console.WriteLine(brush.MouseDown());
 
 #endregion
 
+#region Iterator Pattern
+
+var productCollection = new ProductCollection();
+productCollection.Add(new Product(1, "Milk"));
+productCollection.Add(new Product(2, "Bread"));
+productCollection.Add(new Product(3, "Meat"));
+
+var iterator = productCollection.CreateIterator();
+
+while (iterator.HasNext())
+{
+    System.Console.WriteLine(iterator.Current());
+    iterator.Next();
+}
+
+#endregion
 
 
 

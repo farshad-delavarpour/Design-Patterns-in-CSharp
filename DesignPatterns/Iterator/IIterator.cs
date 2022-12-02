@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns.Iterator
 {
-    public interface IIterator
+    public interface IIterator<T>
     {
         bool HasNext();
-        string Current();
+        T Current();
         void Next();
     }
 }
