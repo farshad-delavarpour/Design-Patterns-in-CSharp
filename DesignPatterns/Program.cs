@@ -69,5 +69,8 @@ chatClient2.Send("Some Text");
 
 #endregion
 
+#region Template Method Pattern
+
+#endregion
 
 Console.ReadKey();
