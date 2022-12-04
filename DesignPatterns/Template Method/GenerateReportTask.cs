@@ -6,7 +6,7 @@ namespace DesignPatterns.TemplateMethod
         {
         }
 
-        public override void DoExecute()
+        protected override void DoExecute()
         {
             System.Console.WriteLine("Report Generated.");
         }
@@ -18,7 +18,7 @@ namespace DesignPatterns.TemplateMethod
         {
         }
 
-        public override void DoExecute()
+        protected override void DoExecute()
         {
             System.Console.WriteLine("Money Transferred.");
         }

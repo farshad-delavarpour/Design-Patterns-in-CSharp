@@ -16,6 +16,6 @@ namespace DesignPatterns.TemplateMethod
             DoExecute();
         }
 
-        public abstract void DoExecute();
+        protected abstract void DoExecute();
     }
 }
