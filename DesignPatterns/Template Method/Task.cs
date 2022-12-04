@@ -4,6 +4,11 @@ namespace DesignPatterns.TemplateMethod
     {
         private readonly Logger _logger;
 
+        public Task()
+        {
+            _logger = new Logger();
+        }
+
         public Task(Logger logger)
         {
             _logger = logger;

@@ -3,6 +3,7 @@ using DesignPatterns.BrushTool;
 using DesignPatterns.Iterator;
 using DesignPatterns.State;
 using DesignPatterns.Strategy;
+using DesignPatterns.TemplateMethod;
 
 #region Memento Pattern
 
@@ -61,15 +62,18 @@ using DesignPatterns.Strategy;
 
 #region Strategy Pattern
 
-var chatClient = new ChatClient(new AESEncryption());
-var chatClient2 = new ChatClient(new DESEncryption());
+// var chatClient = new ChatClient(new AESEncryption());
+// var chatClient2 = new ChatClient(new DESEncryption());
 
-chatClient.Send("Some Text");
-chatClient2.Send("Some Text");
+// chatClient.Send("Some Text");
+// chatClient2.Send("Some Text");
 
 #endregion
 
 #region Template Method Pattern
+
+var task = new GenerateReportTask();
+task.Execute();
 
 #endregion
 
