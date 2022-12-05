@@ -1,5 +1,6 @@
 ﻿using System;
 using DesignPatterns.BrushTool;
+using DesignPatterns.Command;
 using DesignPatterns.Iterator;
 using DesignPatterns.State;
 using DesignPatterns.Strategy;
@@ -72,8 +73,18 @@ using DesignPatterns.TemplateMethod;
 
 #region Template Method Pattern
 
-var task = new GenerateReportTask();
-task.Execute();
+// var task = new GenerateReportTask();
+// task.Execute();
+
+#endregion
+
+#region Command Pattern
+
+var customerService = new CustomerService();
+var addCustomer = new AddCustomerCommand(customerService);
+var button = new Button(addCustomer);
+
+button.Click();
 
 #endregion
 
