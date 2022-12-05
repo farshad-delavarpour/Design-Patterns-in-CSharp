@@ -1,6 +1,6 @@
 namespace DesignPatterns.Command
 {
-    public class AddCustomerCommand : Command
+    public class AddCustomerCommand : ICommand
     {
         private CustomerService _customerService;
         public AddCustomerCommand(CustomerService customerService)

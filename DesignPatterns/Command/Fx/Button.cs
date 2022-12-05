@@ -2,9 +2,9 @@ namespace DesignPatterns.Command
 {
     public class Button
     {
-        private Command _command;
+        private ICommand _command;
 
-        public Button(Command command)
+        public Button(ICommand command)
         {
             _command = command;
         }
