@@ -9,7 +9,7 @@ namespace DesignPatterns.Observer
         public void NotifyObservers(object value)
         {
             foreach (var observer in _observers)
-                observer.Update(value);
+                observer.Update();
         }
 
         public void RemoveObserver(IObserver observer) => _observers.Remove(observer);

@@ -92,8 +92,8 @@ using DesignPatterns.TemplateMethod;
 #region Observer Pattern
 
 var dataSource = new DataSource();
-dataSource.AddObserver(new Chart());
-dataSource.AddObserver(new SpreatSheet());
+dataSource.AddObserver(new Chart(dataSource));
+dataSource.AddObserver(new SpreatSheet(dataSource));
 
 dataSource.Value = 1;
 

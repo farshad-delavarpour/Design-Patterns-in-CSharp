@@ -2,9 +2,16 @@ namespace DesignPatterns.Observer
 {
     public class Chart : IObserver
     {
-        public void Update(object value)
+        private readonly DataSource _dataSource;
+
+        public Chart(DataSource dataSource)
         {
-            System.Console.WriteLine($"Chart Updated => {value}");
+            _dataSource = dataSource;
+        }
+
+        public void Update()
+        {
+            System.Console.WriteLine($"Chart Updated => {_dataSource.Value}");
         }
     }
 }
