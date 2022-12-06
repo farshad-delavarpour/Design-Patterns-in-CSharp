@@ -2,6 +2,7 @@
 using DesignPatterns.BrushTool;
 using DesignPatterns.Command;
 using DesignPatterns.Iterator;
+using DesignPatterns.Mediator;
 using DesignPatterns.Observer;
 using DesignPatterns.State;
 using DesignPatterns.Strategy;
@@ -101,6 +102,8 @@ using DesignPatterns.TemplateMethod;
 #endregion
 
 #region Mediator Pattern
+var dialogBox = new ArticleDialogBox();
+dialogBox.SimulateUserInteraction();
 
 #endregion
 

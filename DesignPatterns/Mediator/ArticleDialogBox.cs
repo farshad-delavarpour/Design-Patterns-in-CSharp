@@ -13,6 +13,17 @@ namespace DesignPatterns.Mediator
             _textBox = new TextBox(this);
         }
 
+        public void SimulateUserInteraction()
+        {
+            _articleListBox.Selection = "Article 1";
+            System.Console.WriteLine($"TextBox => {_textBox.Content}");
+            System.Console.WriteLine($"Button => {_saveButton.IsEnabled}");
+
+            _textBox.Content = "";
+            System.Console.WriteLine($"TextBox => {_textBox.Content}");
+            System.Console.WriteLine($"Button => {_saveButton.IsEnabled}");
+        }
+
         public override void Changed(UIControl control)
         {
             if (control == _articleListBox)
