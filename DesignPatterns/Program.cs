@@ -2,6 +2,7 @@
 using DesignPatterns.BrushTool;
 using DesignPatterns.Command;
 using DesignPatterns.Iterator;
+using DesignPatterns.Observer;
 using DesignPatterns.State;
 using DesignPatterns.Strategy;
 using DesignPatterns.TemplateMethod;
@@ -80,12 +81,22 @@ using DesignPatterns.TemplateMethod;
 
 #region Command Pattern
 
-var customerService = new CustomerService();
-var addCustomer = new AddCustomerCommand(customerService);
-var button = new Button(addCustomer);
+// var customerService = new CustomerService();
+// var addCustomer = new AddCustomerCommand(customerService);
+// var button = new Button(addCustomer);
 
-button.Click();
+// button.Click();
 
 #endregion
 
+#region Observer Pattern
+
+var dataSource = new DataSource();
+dataSource.AddObserver(new Chart());
+dataSource.AddObserver(new SpreatSheet());
+
+dataSource.Value = 1;
+
+dataSource.Value = 3;
+#endregion
 Console.ReadKey();
