@@ -91,12 +91,18 @@ using DesignPatterns.TemplateMethod;
 
 #region Observer Pattern
 
-var dataSource = new DataSource();
-dataSource.AddObserver(new Chart(dataSource));
-dataSource.AddObserver(new SpreatSheet(dataSource));
+// var dataSource = new DataSource();
+// dataSource.AddObserver(new Chart(dataSource));
+// dataSource.AddObserver(new SpreatSheet(dataSource));
 
-dataSource.Value = 1;
+// dataSource.Value = 1;
+// dataSource.Value = 3;
 
-dataSource.Value = 3;
 #endregion
+
+#region Mediator Pattern
+
+#endregion
+
+
 Console.ReadKey();
