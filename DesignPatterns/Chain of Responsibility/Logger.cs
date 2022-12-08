@@ -1,10 +1,15 @@
 namespace DesignPatterns.ChainOfResponsibility
 {
-    public class Logger
+    public class Logger : Handler
     {
-        public void Log()
+        public Logger(Handler next) : base(next)
+        {
+        }
+
+        public override bool DoHandle(HttpRequest request)
         {
             System.Console.WriteLine("Log ...");
+            return true;
         }
     }
 }

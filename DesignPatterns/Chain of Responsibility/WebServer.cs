@@ -2,9 +2,16 @@ namespace DesignPatterns.ChainOfResponsibility
 {
     public class WebServer
     {
-        public void handle(HttpRequest httpRequest)
-        {
+        private Handler _handler;
 
+        public WebServer(Handler handler)
+        {
+            _handler = handler;
+        }
+
+        public void handle(HttpRequest request)
+        {
+            _handler.Handle(request);
         }
     }
 }

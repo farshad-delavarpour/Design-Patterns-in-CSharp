@@ -1,10 +1,15 @@
 namespace DesignPatterns.ChainOfResponsibility
 {
-    public class Compressor
+    public class Compressor : Handler
     {
-        public void Compress()
+        public Compressor(Handler handler) : base(handler)
+        {
+        }
+
+        public override bool DoHandle(HttpRequest request)
         {
             System.Console.WriteLine("Compress ...");
+            return true;
         }
     }
 }

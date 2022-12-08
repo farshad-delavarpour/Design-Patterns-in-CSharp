@@ -11,10 +11,4 @@ namespace DesignPatterns.ChainOfResponsibility
             Password = password;
         }
     }
-
-    public class Authenticator
-    {
-        public bool Authenticate(HttpRequest request) =>
-            (request.Username == "Farshad" && request.Password == "123");
-    }
 }
