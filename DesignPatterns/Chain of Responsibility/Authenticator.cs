@@ -6,7 +6,10 @@ namespace DesignPatterns.ChainOfResponsibility
         {
         }
 
-        public override bool DoHandle(HttpRequest request) =>
-            (request.Username == "Farshad" && request.Password == "123");
+        public override bool DoHandle(HttpRequest request)
+        {
+            System.Console.WriteLine("Authenticating ...");
+            return (request.Username == "Farshad" && request.Password == "123");
+        }
     }
 }

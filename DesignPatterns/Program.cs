@@ -1,12 +1,13 @@
 ﻿using System;
-using DesignPatterns.BrushTool;
-using DesignPatterns.Command;
-using DesignPatterns.Iterator;
-using DesignPatterns.Mediator;
-using DesignPatterns.Observer;
-using DesignPatterns.State;
-using DesignPatterns.Strategy;
-using DesignPatterns.TemplateMethod;
+// using DesignPatterns.BrushTool;
+using DesignPatterns.ChainOfResponsibility;
+// using DesignPatterns.Command;
+// using DesignPatterns.Iterator;
+// using DesignPatterns.Mediator;
+// using DesignPatterns.Observer;
+// using DesignPatterns.State;
+// using DesignPatterns.Strategy;
+// using DesignPatterns.TemplateMethod;
 
 #region Memento Pattern
 
@@ -102,8 +103,20 @@ using DesignPatterns.TemplateMethod;
 #endregion
 
 #region Mediator Pattern
-var dialogBox = new ArticleDialogBox();
-dialogBox.SimulateUserInteraction();
+
+// var dialogBox = new ArticleDialogBox();
+// dialogBox.SimulateUserInteraction();
+
+#endregion
+
+#region Chain of Responsibility
+// Authentication ==> Logging ==> Compression
+var compressor = new Compressor(null);
+var logger = new Logger(compressor);
+var authenticator = new Authenticator(logger);
+
+var server = new WebServer(authenticator);
+server.Handle(new HttpRequest("Farshad", "123"));
 
 #endregion
 

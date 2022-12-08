@@ -9,7 +9,7 @@ namespace DesignPatterns.ChainOfResponsibility
             _handler = handler;
         }
 
-        public void handle(HttpRequest request)
+        public void Handle(HttpRequest request)
         {
             _handler.Handle(request);
         }
