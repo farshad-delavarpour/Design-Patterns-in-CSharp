@@ -1,6 +1,7 @@
 ﻿using System;
 // using DesignPatterns.BrushTool;
 using DesignPatterns.ChainOfResponsibility;
+using DesignPatterns.Composite;
 using DesignPatterns.Visitor;
 // using DesignPatterns.Command;
 // using DesignPatterns.Iterator;
@@ -123,11 +124,30 @@ using DesignPatterns.Visitor;
 
 #region Visitor
 
-var document = new HtmlDocument();
-document.AddNode(new HeadingNode());
-document.AddNode(new AnchorNode());
-document.Execute(new HighLightOperation());
-document.Execute(new PlainTextOperation());
+// var document = new HtmlDocument();
+// document.AddNode(new HeadingNode());
+// document.AddNode(new AnchorNode());
+// document.Execute(new HighLightOperation());
+// document.Execute(new PlainTextOperation());
+
+#endregion
+
+#region Composite
+
+Group group1 = new();
+group1.Add(new Shape("Shape 1"));
+group1.Add(new Shape("Shape 2"));
+
+Group group2 = new();
+group2.Add(new Shape("Shape 3"));
+group2.Add(new Shape("Shape 4"));
+
+Group group3 = new();
+group3.Add(group1);
+group3.Add(group2);
+
+group3.Render();
+
 #endregion
 
 Console.ReadKey();
