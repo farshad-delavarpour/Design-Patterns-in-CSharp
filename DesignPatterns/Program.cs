@@ -6,6 +6,7 @@ using DesignPatterns.ChainOfResponsibility;
 using DesignPatterns.Composite;
 using DesignPatterns.Composite.Example2;
 using DesignPatterns.Decorator;
+using DesignPatterns.Decorator.Example2;
 using DesignPatterns.Visitor;
 // using DesignPatterns.Command;
 // using DesignPatterns.Iterator;
@@ -184,9 +185,18 @@ using DesignPatterns.Visitor;
 
 #region Decorator
 
-EncryptedCloudStream encryptedCloudStream = new(new CompressedCloudStream(new CloudStream()));
-encryptedCloudStream.Write("Some Other Data");
+#region Example1
 
+// EncryptedCloudStream encryptedCloudStream = new(new CompressedCloudStream(new CloudStream()));
+// encryptedCloudStream.Write("Some Other Data");
+
+#endregion
+#region Example2
+
+Editor editor = new();
+editor.OpenProject();
+
+#endregion
 #endregion
 
 Console.ReadKey();
