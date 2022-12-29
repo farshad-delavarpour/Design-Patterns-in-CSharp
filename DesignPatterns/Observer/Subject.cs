@@ -2,7 +2,7 @@ namespace DesignPatterns.Observer
 {
     public class Subject
     {
-        private List<IObserver> _observers = new List<IObserver>();
+        private List<IObserver> _observers = new();
 
         public void AddObserver(IObserver observer) => _observers.Add(observer);
 

@@ -11,6 +11,7 @@ namespace DesignPatterns.Iterator
         {
             return new ProductIterator(this);
         }
+
         public class ProductIterator : IIterator<Product>
         {
             private readonly ProductCollection _collection;

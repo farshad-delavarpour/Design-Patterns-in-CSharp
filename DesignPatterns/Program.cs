@@ -1,6 +1,7 @@
 ﻿using System;
 // using DesignPatterns.BrushTool;
 using DesignPatterns.ChainOfResponsibility;
+using DesignPatterns.Visitor;
 // using DesignPatterns.Command;
 // using DesignPatterns.Iterator;
 // using DesignPatterns.Mediator;
@@ -111,14 +112,22 @@ using DesignPatterns.ChainOfResponsibility;
 
 #region Chain of Responsibility
 // Authentication ==> Logging ==> Compression
-var compressor = new Compressor(null);
-var logger = new Logger(compressor);
-var authenticator = new Authenticator(logger);
+// var compressor = new Compressor(null);
+// var logger = new Logger(compressor);
+// var authenticator = new Authenticator(logger);
 
-var server = new WebServer(authenticator);
-server.Handle(new HttpRequest("Farshad", "123"));
+// var server = new WebServer(authenticator);
+// server.Handle(new HttpRequest("Farshad", "123"));
 
 #endregion
 
+#region Visitor
+
+var document = new HtmlDocument();
+document.AddNode(new HeadingNode());
+document.AddNode(new AnchorNode());
+
+document.HighLight();
+#endregion
 
 Console.ReadKey();
