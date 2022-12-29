@@ -1,5 +1,6 @@
 ﻿using System;
 using DesignPatterns.Adapter;
+using DesignPatterns.Adapter.fxFilter;
 // using DesignPatterns.BrushTool;
 using DesignPatterns.ChainOfResponsibility;
 using DesignPatterns.Composite;
@@ -174,9 +175,11 @@ using DesignPatterns.Visitor;
 #endregion
 
 #region Adapter
+
 ImageView imageView = new(new Image());
-imageView.Apply(new VividFilter());
+imageView.Apply(new CaramelFilter(new Caramel()));
 
 #endregion
+
 
 Console.ReadKey();
