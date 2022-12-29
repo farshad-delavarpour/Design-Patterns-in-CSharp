@@ -2,6 +2,7 @@
 // using DesignPatterns.BrushTool;
 using DesignPatterns.ChainOfResponsibility;
 using DesignPatterns.Composite;
+using DesignPatterns.Composite.Example2;
 using DesignPatterns.Visitor;
 // using DesignPatterns.Command;
 // using DesignPatterns.Iterator;
@@ -134,19 +135,40 @@ using DesignPatterns.Visitor;
 
 #region Composite
 
-Group group1 = new();
-group1.Add(new Shape("Shape 1"));
-group1.Add(new Shape("Shape 2"));
+#region Example1
 
-Group group2 = new();
-group2.Add(new Shape("Shape 3"));
-group2.Add(new Shape("Shape 4"));
+// Group group1 = new();
+// group1.Add(new Shape("Shape 1"));
+// group1.Add(new Shape("Shape 2"));
 
-Group group3 = new();
-group3.Add(group1);
-group3.Add(group2);
+// Group group2 = new();
+// group2.Add(new Shape("Shape 3"));
+// group2.Add(new Shape("Shape 4"));
 
-group3.Render();
+// Group group3 = new();
+// group3.Add(group1);
+// group3.Add(group2);
+
+// group3.Render();
+
+#endregion
+
+#region Example2
+Team team1 = new();
+team1.Add(new Truck());
+team1.Add(new HumanResource());
+team1.Add(new HumanResource());
+
+Team team2 = new();
+team1.Add(new Truck());
+team1.Add(new HumanResource());
+team1.Add(new HumanResource());
+
+Team team3 = new();
+team3.Add(team1);
+
+team3.Deploy();
+#endregion
 
 #endregion
 
