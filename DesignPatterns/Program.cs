@@ -126,8 +126,8 @@ using DesignPatterns.Visitor;
 var document = new HtmlDocument();
 document.AddNode(new HeadingNode());
 document.AddNode(new AnchorNode());
+document.Execute(new HighLightOperation());
 
-document.HighLight();
 #endregion
 
 Console.ReadKey();

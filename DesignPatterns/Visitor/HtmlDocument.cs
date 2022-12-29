@@ -2,15 +2,15 @@ namespace DesignPatterns.Visitor
 {
     public class HtmlDocument
     {
-        private readonly List<HtmlNode> _htmlNodes = new();
+        private readonly List<IHtmlNode> _htmlNodes = new();
 
-        public void AddNode(HtmlNode node) =>
+        public void AddNode(IHtmlNode node) =>
             _htmlNodes.Add(node);
 
-        public void HighLight()
+        public void Execute(IOperation operation)
         {
             foreach (var node in _htmlNodes)
-                node.HighLight();
+                node.Execute(operation);
         }
     }
 }

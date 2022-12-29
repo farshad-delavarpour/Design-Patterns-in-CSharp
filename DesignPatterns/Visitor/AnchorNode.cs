@@ -1,10 +1,8 @@
 namespace DesignPatterns.Visitor
 {
-    public class AnchorNode : HtmlNode
+    public class AnchorNode : IHtmlNode
     {
-        public void HighLight()
-        {
-            System.Console.WriteLine("Anchore Highlighted");
-        }
+        public void Execute(IOperation operation) =>
+            operation.Apply(this);
     }
 }

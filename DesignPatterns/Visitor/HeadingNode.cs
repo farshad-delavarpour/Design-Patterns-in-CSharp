@@ -1,10 +1,10 @@
 namespace DesignPatterns.Visitor
 {
-    public class HeadingNode : HtmlNode
+    public class HeadingNode : IHtmlNode
     {
-        public void HighLight()
+        public void Execute(IOperation operation)
         {
-            System.Console.WriteLine("Heading Highlighted");
+            operation.Apply(this);
         }
     }
 }
