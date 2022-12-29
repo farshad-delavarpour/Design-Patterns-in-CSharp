@@ -5,6 +5,7 @@ using DesignPatterns.Adapter.fxFilter;
 using DesignPatterns.ChainOfResponsibility;
 using DesignPatterns.Composite;
 using DesignPatterns.Composite.Example2;
+using DesignPatterns.Decorator;
 using DesignPatterns.Visitor;
 // using DesignPatterns.Command;
 // using DesignPatterns.Iterator;
@@ -176,10 +177,14 @@ using DesignPatterns.Visitor;
 
 #region Adapter
 
-ImageView imageView = new(new Image());
-imageView.Apply(new CaramelFilter(new Caramel()));
+// ImageView imageView = new(new Image());
+// imageView.Apply(new CaramelFilter(new Caramel()));
 
 #endregion
 
+#region Decorator
+EncryptedCloudStream cloudStream = new();
+cloudStream.Write("Some Data");
+#endregion
 
 Console.ReadKey();
