@@ -1,11 +1,18 @@
 namespace DesignPatterns.Decorator
 {
-    public class EncryptedCloudStream : CloudStream
+    public class EncryptedCloudStream : IStream
     {
-        public override void Write(string data)
+        private IStream _stream;
+
+        public EncryptedCloudStream(IStream stream)
+        {
+            _stream = stream;
+        }
+
+        public void Write(string data)
         {
             data = Encrypt(data);
-            base.Write(data);
+            _stream.Write(data);
         }
 
         private string Encrypt(string data) => "$#fs#!$@#^&$%#";

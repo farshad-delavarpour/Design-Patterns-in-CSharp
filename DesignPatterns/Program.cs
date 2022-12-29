@@ -183,8 +183,10 @@ using DesignPatterns.Visitor;
 #endregion
 
 #region Decorator
-EncryptedCloudStream cloudStream = new();
-cloudStream.Write("Some Data");
+
+EncryptedCloudStream encryptedCloudStream = new(new CompressedCloudStream(new CloudStream()));
+encryptedCloudStream.Write("Some Other Data");
+
 #endregion
 
 Console.ReadKey();
