@@ -127,7 +127,7 @@ var document = new HtmlDocument();
 document.AddNode(new HeadingNode());
 document.AddNode(new AnchorNode());
 document.Execute(new HighLightOperation());
-
+document.Execute(new PlainTextOperation());
 #endregion
 
 Console.ReadKey();
