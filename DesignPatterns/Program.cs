@@ -1,4 +1,5 @@
 ﻿using System;
+using DesignPatterns.Adapter;
 // using DesignPatterns.BrushTool;
 using DesignPatterns.ChainOfResponsibility;
 using DesignPatterns.Composite;
@@ -154,21 +155,27 @@ using DesignPatterns.Visitor;
 #endregion
 
 #region Example2
-Team team1 = new();
-team1.Add(new Truck());
-team1.Add(new HumanResource());
-team1.Add(new HumanResource());
+// Team team1 = new();
+// team1.Add(new Truck());
+// team1.Add(new HumanResource());
+// team1.Add(new HumanResource());
 
-Team team2 = new();
-team1.Add(new Truck());
-team1.Add(new HumanResource());
-team1.Add(new HumanResource());
+// Team team2 = new();
+// team1.Add(new Truck());
+// team1.Add(new HumanResource());
+// team1.Add(new HumanResource());
 
-Team team3 = new();
-team3.Add(team1);
+// Team team3 = new();
+// team3.Add(team1);
 
-team3.Deploy();
+// team3.Deploy();
 #endregion
+
+#endregion
+
+#region Adapter
+ImageView imageView = new(new Image());
+imageView.Apply(new VividFilter());
 
 #endregion
 
