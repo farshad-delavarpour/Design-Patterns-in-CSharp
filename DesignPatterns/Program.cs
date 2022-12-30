@@ -8,6 +8,7 @@ using DesignPatterns.Composite.Example2;
 using DesignPatterns.Decorator;
 using DesignPatterns.Decorator.Example2;
 using DesignPatterns.Facade;
+using DesignPatterns.Flyweight;
 using DesignPatterns.Visitor;
 // using DesignPatterns.Command;
 // using DesignPatterns.Iterator;
@@ -201,9 +202,15 @@ using DesignPatterns.Visitor;
 
 #region Facade
 
-TwitterAPI twitterApi = new("appKey", "secretKey");
-var recentTweets = twitterApi.GetRecentTweets();
+// TwitterAPI twitterApi = new("appKey", "secretKey");
+// var recentTweets = twitterApi.GetRecentTweets();
 
 #endregion
 
+#region Flyweight
+
+PointService pointService = new();
+var points = pointService.GetPoints();
+
+#endregion
 Console.ReadKey();
