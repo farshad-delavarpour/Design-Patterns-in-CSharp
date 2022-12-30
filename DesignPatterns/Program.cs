@@ -7,6 +7,7 @@ using DesignPatterns.Composite;
 using DesignPatterns.Composite.Example2;
 using DesignPatterns.Decorator;
 using DesignPatterns.Decorator.Example2;
+using DesignPatterns.Facade;
 using DesignPatterns.Visitor;
 // using DesignPatterns.Command;
 // using DesignPatterns.Iterator;
@@ -184,7 +185,6 @@ using DesignPatterns.Visitor;
 #endregion
 
 #region Decorator
-
 #region Example1
 
 // EncryptedCloudStream encryptedCloudStream = new(new CompressedCloudStream(new CloudStream()));
@@ -193,10 +193,21 @@ using DesignPatterns.Visitor;
 #endregion
 #region Example2
 
-Editor editor = new();
-editor.OpenProject();
+// Editor editor = new();
+// editor.OpenProject();
 
 #endregion
+#endregion
+
+#region Facade
+
+var oauth = new OAuth();
+var requestToken = oauth.requestToken("appKey", "secret");
+var accessToken = oauth.getAccessToken(requestToken);
+
+var twitterClient = new TwitterClient();
+var tweets = twitterClient.getRecentTweets(accessToken);
+
 #endregion
 
 Console.ReadKey();
