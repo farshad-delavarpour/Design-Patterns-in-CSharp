@@ -2,7 +2,7 @@
 using DesignPatterns.Adapter;
 using DesignPatterns.Adapter.fxFilter;
 using DesignPatterns.Bridge;
-// using DesignPatterns.BrushTool;
+using DesignPatterns.BrushTool;
 using DesignPatterns.ChainOfResponsibility;
 using DesignPatterns.Composite;
 using DesignPatterns.Composite.Example2;
@@ -11,13 +11,14 @@ using DesignPatterns.Decorator.Example2;
 using DesignPatterns.Facade;
 using DesignPatterns.Flyweight;
 using DesignPatterns.Visitor;
-// using DesignPatterns.Command;
-// using DesignPatterns.Iterator;
-// using DesignPatterns.Mediator;
-// using DesignPatterns.Observer;
-// using DesignPatterns.State;
-// using DesignPatterns.Strategy;
-// using DesignPatterns.TemplateMethod;
+using DesignPatterns.Command;
+using DesignPatterns.Iterator;
+using DesignPatterns.Mediator;
+using DesignPatterns.Observer;
+using DesignPatterns.State;
+using DesignPatterns.Strategy;
+using DesignPatterns.TemplateMethod;
+using DesignPatterns.Proxy;
 
 #region Memento Pattern
 
@@ -119,7 +120,7 @@ using DesignPatterns.Visitor;
 
 #endregion
 
-#region Chain of Responsibility
+#region Chain of Responsibility Pattern
 // Authentication ==> Logging ==> Compression
 // var compressor = new Compressor(null);
 // var logger = new Logger(compressor);
@@ -130,7 +131,7 @@ using DesignPatterns.Visitor;
 
 #endregion
 
-#region Visitor
+#region Visitor Pattern
 
 // var document = new HtmlDocument();
 // document.AddNode(new HeadingNode());
@@ -140,7 +141,7 @@ using DesignPatterns.Visitor;
 
 #endregion
 
-#region Composite
+#region Composite Pattern
 
 #region Example1
 
@@ -179,14 +180,14 @@ using DesignPatterns.Visitor;
 
 #endregion
 
-#region Adapter
+#region Adapter Pattern
 
 // ImageView imageView = new(new Image());
 // imageView.Apply(new CaramelFilter(new Caramel()));
 
 #endregion
 
-#region Decorator
+#region Decorator Pattern
 #region Example1
 
 // EncryptedCloudStream encryptedCloudStream = new(new CompressedCloudStream(new CloudStream()));
@@ -201,14 +202,14 @@ using DesignPatterns.Visitor;
 #endregion
 #endregion
 
-#region Facade
+#region Facade Pattern
 
 // TwitterAPI twitterApi = new("appKey", "secretKey");
 // var recentTweets = twitterApi.GetRecentTweets();
 
 #endregion
 
-#region Flyweight
+#region Flyweight Pattern
 
 // PointService pointService = new(new PointIconFactory());
 // var points = pointService.GetPoints();
@@ -217,12 +218,27 @@ using DesignPatterns.Visitor;
 
 #endregion
 
-#region Bridge
+#region Bridge Pattern
 
-RemoteControl remoteControl = new(new SonyTV());
-// OR => AdvancedRemoteControl remoteControl = new(new SonyTV());
-remoteControl.TurnOn();
-remoteControl.TurnOn();
+// RemoteControl remoteControl = new(new SonyTV());
+// // OR => AdvancedRemoteControl remoteControl = new(new SonyTV());
+// remoteControl.TurnOn();
+// remoteControl.TurnOn();
 
 #endregion
+
+#region Proxy Pattern
+
+var dbContext = new DBContext();
+
+var product = dbContext.GetProduct(1);
+
+product.Name = "Updated Name";
+dbContext.SaveChanges();
+
+product.Name = "Another name";
+dbContext.SaveChanges();
+
+#endregion
+
 Console.ReadKey();
