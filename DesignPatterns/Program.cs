@@ -1,6 +1,7 @@
 ﻿using System;
 using DesignPatterns.Adapter;
 using DesignPatterns.Adapter.fxFilter;
+using DesignPatterns.Bridge;
 // using DesignPatterns.BrushTool;
 using DesignPatterns.ChainOfResponsibility;
 using DesignPatterns.Composite;
@@ -209,12 +210,19 @@ using DesignPatterns.Visitor;
 
 #region Flyweight
 
-PointService pointService = new(new PointIconFactory());
-var points = pointService.GetPoints();
-foreach (var point in points)
-    point.Draw();
+// PointService pointService = new(new PointIconFactory());
+// var points = pointService.GetPoints();
+// foreach (var point in points)
+//     point.Draw();
 
 #endregion
 
+#region Bridge
 
+RemoteControl remoteControl = new(new SonyTV());
+// OR => AdvancedRemoteControl remoteControl = new(new SonyTV());
+remoteControl.TurnOn();
+remoteControl.TurnOn();
+
+#endregion
 Console.ReadKey();
