@@ -3,7 +3,7 @@ namespace DesignPatterns.Flyweight
     public enum PointType
     {
         Hospital,
-        Cofe,
+        Cafe,
         Restaurant
     }
 }

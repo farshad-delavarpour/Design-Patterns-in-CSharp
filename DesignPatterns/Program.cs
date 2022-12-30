@@ -209,8 +209,12 @@ using DesignPatterns.Visitor;
 
 #region Flyweight
 
-PointService pointService = new();
+PointService pointService = new(new PointIconFactory());
 var points = pointService.GetPoints();
+foreach (var point in points)
+    point.Draw();
 
 #endregion
+
+
 Console.ReadKey();
